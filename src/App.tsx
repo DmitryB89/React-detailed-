@@ -10,6 +10,8 @@ import {
     TrackValueOfUncontrolledInput,
 } from "./Components/Input/UncontrolledInput";
 import {ControlledCheckbox, ControlledInput, ControlledSelect} from "./Components/Input/ControlledInput";
+import {Select} from "./Components/Select/Select";
+import {Example1} from "./Components/ReactMemo";
 
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
     let [switchOn, setSwitchOn] = useState(false)
 
     const onClickCallBack = () => {
+        alert('Some user was clicked')
+    }
+    const onChangeCallback = () => {
         alert('Some user was clicked')
     }
 
@@ -62,6 +67,14 @@ function App() {
             <div><ControlledInput/></div>
             <div><ControlledCheckbox/></div>
             <div><ControlledSelect/></div>
+            <div><Example1/></div>
+            {/*<div><Select items={[*/}
+            {/*    {title: 'Moscow', value: 1},*/}
+            {/*    {title: 'Minsk', value: 2},*/}
+            {/*    {title: 'Kiev', value: 3},*/}
+            {/*    {title: 'Praga', value: 4},*/}
+            {/*    {title: 'New York', value: 5}*/}
+            {/*]} onChange={onChangeCallback} value={'1'}/></div>*/}
 
 
             {/*<UnControlledAccordeon titleValue={'Users'}/>*/}
