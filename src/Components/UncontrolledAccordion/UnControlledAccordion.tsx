@@ -22,7 +22,7 @@ const reducer = (state: boolean, action: ActionType) => {
     return state
 }
 
-export const UnControlledAccordeon = (props: AccordeonPropsType) => {
+export const UnControlledAccordion = (props: AccordeonPropsType) => {
 
     // const [collapsed, setCollapsed] = useState(false)
     const [collapsed, dispatch] = useReducer(reducer, false)

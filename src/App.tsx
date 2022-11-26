@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Accordion} from "./Components/Accordeon/Accordion";
+import {Accordion} from "./Components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./Components/Rating/Rating";
-import {UncontrolledOnOff} from "./Components/OnOff/UncontrolledOnOff";
-import {UnControlledAccordeon} from "./Components/Accordeon/UnControlledAccordeon";
-import {UnControlledRating} from "./Components/Rating/UnControlledRating";
+import {UncontrolledOnOff} from "./Components/UncontrolledOnOff/UncontrolledOnOff";
+import {UnControlledAccordion} from "./Components/UncontrolledAccordion/UnControlledAccordion";
+import {UnControlledRating} from "./Components/UncontrolledRating/UnControlledRating";
 import {
     GetValueOfUncontrolledInputByButtonPress,
     TrackValueOfUncontrolledInput,
@@ -34,7 +34,7 @@ function App() {
 
     return (
         <div className={'App'}>
-            <UnControlledAccordeon titleValue={'Menu'}/>
+            <UnControlledAccordion titleValue={'Menu'}/>
             <UnControlledRating/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <Accordion
