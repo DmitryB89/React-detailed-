@@ -1,5 +1,6 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
+import {action} from "@storybook/addon-actions";
 
 
 export default {
@@ -13,7 +14,7 @@ export const UncontrolledInputValueTracking = () => {
         const actualValue = event.currentTarget.value;
         setValue(actualValue);
     }
-        return <> <input onChange={onChange}/> - {value}</>
+    return <> <input onChange={onChange}/> - {value}</>
 
 }
 export const GetValueByBtnPress = () => {
@@ -29,5 +30,34 @@ export const GetValueByBtnPress = () => {
         - actual value: {value}</>
 }
 
-export const ControlledInput = () => <input value={'blablabla'}/>
+export const ControlledInput = () => {
+    const [parentValue, setParentValue] = useState('')
+    const onChangeHadler = (e: ChangeEvent<HTMLInputElement>) => setParentValue(e.currentTarget.value)
+    return (
+        <input value={parentValue} onChange={onChangeHadler}/>
+    )
+}
+
+export const Checkbox = () => {
+    const [parentValue, setParentValue] = useState(true)
+    const onChangeHadler = (e: ChangeEvent<HTMLInputElement>) => setParentValue(e.currentTarget.checked)
+    return (
+        <input type={"checkbox"} checked={parentValue} onChange={onChangeHadler}/>
+    )
+}
+
+export const ControlledSelect = () => {
+    const [parentValue, setParentValue] = useState<string | undefined>(undefined)
+    const onChangeHadler = (e: ChangeEvent<HTMLSelectElement>) => setParentValue(e.currentTarget.value)
+    return (
+        <select value={parentValue} onChange={onChangeHadler}>
+            <option>none</option>
+            <option value="1">Moscow</option>
+            <option value="2">Minsk</option>
+            <option value="3">Magadan</option>
+        </select>
+    )
+
+}
+
 
