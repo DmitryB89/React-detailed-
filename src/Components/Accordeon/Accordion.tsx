@@ -27,18 +27,18 @@ export type AccordeonBodyPropsType = {
 }
 
 
-function Accordeon(props: AccordeonPropsType) {
+export function Accordion(props: AccordeonPropsType) {
 
     return (
         <div>
             <AccordeonTitle onChange={props.onChange} title={props.title}/>
             {/*{props.collapsed === false && <AccordeonBody/>}*/}
-            {!props.collapsed && <AccordeonBody items={props.items} onClick={props.onClick}/>}
+            {!props.collapsed && <AccordeonBody items={props.items} onClick={props.onClick} />}
         </div>
     )
 }
 
-function AccordeonTitle(props: AccordeonTitlePropsType) {
+export function AccordeonTitle(props: AccordeonTitlePropsType) {
     console.log('AccordeonTitle rendering')
 
     return (
@@ -57,8 +57,8 @@ function AccordeonBody(props: AccordeonBodyPropsType) {
         </ul>)
 }
 
-// function Accordeon(props: AccordeonPropsType) {
-//     console.log('Accordeon rendering')
+// function Accordion(props: AccordeonPropsType) {
+//     console.log('Accordion rendering')
 //
 //
 //     if (props.collapsed) {
@@ -98,4 +98,3 @@ function AccordeonBody(props: AccordeonBodyPropsType) {
 //         )
 //     }}
 
-export default Accordeon

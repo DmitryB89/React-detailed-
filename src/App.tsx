@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordeon from "./Components/Accordeon/Accordeon";
-import {Rating, RatingValueType} from "./Components/Rating";
+import {Accordion} from "./Components/Accordeon/Accordion";
+import {Rating, RatingValueType} from "./Components/Rating/Rating";
 import {UncontrolledOnOff} from "./Components/OnOff/UncontrolledOnOff";
 import {UnControlledAccordeon} from "./Components/Accordeon/UnControlledAccordeon";
-import {UnControlledRating} from "./Components/UnControlledRating";
+import {UnControlledRating} from "./Components/Rating/UnControlledRating";
 import {
     GetValueOfUncontrolledInputByButtonPress,
     TrackValueOfUncontrolledInput,
@@ -37,7 +37,7 @@ function App() {
             <UnControlledAccordeon titleValue={'Menu'}/>
             <UnControlledRating/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Accordeon
+            <Accordion
                 title={'Menu'}
                 collapsed={accordionCollapsed}
                 onChange={() => {
@@ -78,8 +78,8 @@ function App() {
 
 
             {/*<UnControlledAccordeon titleValue={'Users'}/>*/}
-            {/*<Accordeon title={'This is IT-Incubator'} collapsed={true}/>*/}
-            {/*<Accordeon title={'This is IT-Kamasutra'} collapsed={false}/>*/}
+            {/*<Accordion title={'This is IT-Incubator'} collapsed={true}/>*/}
+            {/*<Accordion title={'This is IT-Kamasutra'} collapsed={false}/>*/}
             {/*<Rating value = {1}/>*/}
             {/*<Rating value = {2}/>*/}
             {/*<Rating value = {3}/>*/}

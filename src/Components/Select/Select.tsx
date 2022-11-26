@@ -1,5 +1,5 @@
 import React from "react";
-import {RatingValueType} from "../Rating";
+import {RatingValueType} from "../Rating/Rating";
 
 type ItemType = {
     title: string
