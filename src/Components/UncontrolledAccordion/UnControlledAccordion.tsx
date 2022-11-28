@@ -1,10 +1,12 @@
 import React, {useReducer, useState} from "react";
 import exp from "constants";
+import {action} from "@storybook/addon-actions";
 
 type AccordeonPropsType = {
     titleValue: string
     // collapsed: boolean
 }
+
 
 type ActionType = {
     type: string

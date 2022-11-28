@@ -11,7 +11,7 @@ import {
 } from "./Components/Input/UncontrolledInput";
 import {ControlledCheckbox, ControlledInput, ControlledSelect} from "./Components/Input/ControlledInput";
 import {Select} from "./Components/Select/Select";
-import {Example1} from "./Components/ReactMemo";
+import {Example1} from "./Components/ReactMemo/ReactMemo";
 
 
 function App() {
@@ -35,7 +35,6 @@ function App() {
     return (
         <div className={'App'}>
             <UnControlledAccordion titleValue={'Menu'}/>
-            <UnControlledRating/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <Accordion
                 title={'Menu'}

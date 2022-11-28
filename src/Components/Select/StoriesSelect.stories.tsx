@@ -1,28 +1,30 @@
-import React from "react";
-import {RatingValueType} from "../Rating/Rating";
+import React, {useState} from 'react';
+import {action} from "@storybook/addon-actions";
+import {Select} from "./Select";
 
-type ItemType = {
-    title: string
-    value: any
+export default {
+    title: 'Select',
+    component: Select,
 }
 
+export const WithValue = () => {
+    const [value, setValue] = useState("2")
 
-type SelectPropsType = {
-    // value: number
-    value: any
-    onClick: (value: RatingValueType) => void
-    items:ItemType[]
+    return <>
+        <Select items={[{value: '1', title: 'Moscow'},
+            {value: '2', title: 'Minsk'},
+            {value: '3', title: 'Magadan'},
+            {value: '4', title: 'St Petersburg'}]} value={value} onChange={setValue}/>
+
+    </>
 }
 
-export function Select(props: SelectPropsType) {
-
-    return (<div>
-        <div>
-            {}
-        </div>
-        {props.items.map(i => {<div>{i.title}</div>})}
-
-    </div>)
-
-
+export const WithoutValue = () => {
+    const [value, setValue] = useState(null)
+    return <>
+        <Select items={[{value: '1', title: 'Moscow'},
+            {value: '2', title: 'Minsk'},
+            {value: '3', title: 'Magadan'},
+            {value: '4', title: 'St Petersburg'}]} value={value} onChange={setValue}/>
+    </>
 }
